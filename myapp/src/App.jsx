@@ -1,15 +1,17 @@
-import Hello from './Hello.jsx'
-import Drink from './Drink.jsx'
-import MyComponent from './MyComponent.jsx'
+import { useRef } from "react"
+import Counter5 from "./Counter5";
+import "./App.css"
+
 
 export default function App() {
-  return (
+  const inputRef = useRef(null);
+
+
+  return(
     <>
-      <MyComponent />
-      <Hello firstName='김' lastName='영' />
-      <Hello firstName='김' lastName='일' />
-      <Hello firstName='김' lastName='이' />
-      <Drink drink='coffee' />
+      <Counter5 />
+      <input type="text" ref={inputRef} />
+      <button onClick={() =>inputRef.current.focus()}>Focus Input</button>
     </>
   )
 }
