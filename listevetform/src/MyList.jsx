@@ -5,9 +5,11 @@ export default function MyList() {
 
   return(
     <ul>
-      data.map((elem, index) =>
-      <li key={index}>List Item : {elem*2}</li>
-      )
+      {
+        data.map((elem, index) => 
+          <li key={index}>List Item : {elem*2}</li>
+        )
+      }
     </ul>
   )
 }

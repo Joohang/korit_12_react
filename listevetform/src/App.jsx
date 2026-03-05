@@ -1,10 +1,14 @@
-import MyList from "./MyList";
+import MyForm2 from "./MyForm2";
+import MyForm3 from "./MyForm3";
 
+export default function App() {
+  
 
-function App() {
-  <>
-    <MyList></MyList>
-  </>
+  return(
+    <>
+      <MyForm3 />
+      <br />
+      <MyForm2 />
+    </>
+  )
 }
-
-export default App
