@@ -9,14 +9,15 @@ type AddTodoProps = {
 export default function AddTodo (props : AddTodoProps) {
   const [ open, setOpen ] = useState(false);
   const [ todo, setTodo ] = useState<Todo>({
+    id:0,
     task : '',
-    time : '',
+    completed : true,
   }) 
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const addTodo = () => {
-    props.addTodo(todo); //항목을 추가하는 상위 컴포넌트의 함수 addItem()
+  const handleAddTodo = () => {
+    props.handleAddTodo(todo); //항목을 추가하는 상위 컴포넌트의 함수 addItem()
     // 그 다음에 TextField
     setTodo({task:'',time:''});
     handleClose();
