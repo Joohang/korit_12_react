@@ -1,11 +1,11 @@
 import { useState } from "react"
 import { CarResponse, Car, CarEntry } from "../types"
-import { Dialog, DialogActions, DialogTitle } from "@mui/material";
+import { Dialog, DialogActions, DialogTitle,Button } from "@mui/material";
+
 type FormProps = {
   cardata : CarResponse;
   carEntry : CarEntry;
 }
-
 import CarDialogContent from "./CarDialogContent";
 import { updateCar } from "../api/carapi";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -67,15 +67,15 @@ export default function EditCar({cardata} : FormProps) {
 
   return (
     <>
-      <button onClick={handleClickOpen}>
+      <Button size='small' onClick={handleClickOpen}>
         edit
-      </button>
+      </Button>
       <Dialog open={open} onClose={handleClickClose}>
         <DialogTitle>Edit Car</DialogTitle>
         <CarDialogContent car={car} handleChange={handleChange}/>
         <DialogActions>
-          <button onClick={handleClickClose}>cancel</button>
-          <button onClick={handleSave}>save</button>
+          <Button onClick={handleClickClose}>cancel</Button>
+          <Button onClick={handleSave}>save</Button>
         </DialogActions>
       </Dialog>  
     </>
